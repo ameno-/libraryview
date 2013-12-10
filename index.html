@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Library View</title>
+        <link rel="stylesheet" href="css/layout.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">      
+    </head>
+    <body>
+    <script id="moreInfo" type="text/html">
+    			<h1 class="infoHeader text-center">{{heading}}</h1>
+	    		<img class="largePreview left" src="{{thumb}}" alt="">
+	    		<ul>
+	    		    <li>{{link1}}</li>
+	    		    <li></li>
+	    		    <li></li>
+	    		</ul>
+	    		<ul class="infoList">
+	    			<li><strong>{{title}}:</strong> {{titleVal}}</li>
+	    			<li><strong>{{author}}:</strong> {{authorVal}}</li>
+	    			<li><strong>Date:</strong> {{date}}</li>
+	    			<li><strong>ISBN:</strong> {{isbn}}</li>
+	    			<li><strong>{{orgPub}}:</strong> {{orgPubVal}}</li>
+	    			<li><strong>{{subj}}:</strong> {{subjVal}}</li>
+	    			<li><strong>{{publisher}}:</strong> {{publisherVal}}</li>
+	    			<li><strong>{{language}}:</strong> {{languageVal}}</li>
+	    			<li><strong>{{desc}}:</strong> {{descVal}}</li>
+	    		</ul>
+    	</script>
+    		<script id="lib" type="text/html">
+    		<div class="small-12 columns">
+    			<div id="infoModal" class="hide">
+    			</div>
+    		
+			<ul class="small-block-grid-2 medium-block-grid-3">
+				<li>
+					<div class="book">
+							<img class="bookThumb left" src="{{thumb}}" alt="">
+							<ul class="bookInfo"><h3>{{bookTitle}}</h3>
+								<li>version: {{version}}</li>
+								<li>{{otherTitle}}</li>
+								<li>{{date}}</li>
+							</ul>
+							<ul class="icons right">
+								<li><a href="#"><i id="accessBook"></i></a></li>
+								<li><a href="#"><i id="info" class="fa fa-info-circle fa-2x"></i></a></li>
+								<li><a href="#"><i id="garbage"></i></a></li>
+							</ul>
+					</div>
+				</li>
+				<li>
+					<div class="book">adfsd</div>
+				</li>
+				<li>
+					<div class="book">adfsd</div>
+				</li>
+				<li>
+					<div class="book">adfsd</div>
+				</li>
+			</ul>
+		</div>
+	</script>
+    	<script src="js/jquery.js"></script>
+        <script src="js/mustache.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

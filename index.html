@@ -11,13 +11,20 @@
     </head>
     <body>
     <script id="moreInfo" type="text/html">
+    	<div class="iframeCont hide">
+    		<i class="fa fa-minus-circle fa-2x" id="close"></i>
+    		<iframe id="aboutFrame" scrolling="yes" src="" frameborder="0"></iframe>
+    	</div>
+    		<div class="stickyLeft">
     			<h1 class="infoHeader text-center">{{heading}}</h1>
-	    		<img class="largePreview left" src="{{thumb}}" alt="">
-	    		<ul>
-	    		    <li>{{link1}}</li>
-	    		    <li></li>
-	    		    <li></li>
+	    		<img class="largePreview" src="{{thumb}}" alt="">
+	    		<ul class="aboutLinks">
+	    		    <li><a href="{{aboutBook}}" target="aboutFrame">About the book</a></li>
+	    		    <li><a href="{{about}}" target="aboutFrame">About Cognilore</a></li>
+	    		    <li><a href="{{credits}}" target="aboutFrame">Credits</a></li>
 	    		</ul>
+	    	</div>
+	    		
 	    		<ul class="infoList">
 	    			<li><strong>{{title}}:</strong> {{titleVal}}</li>
 	    			<li><strong>{{author}}:</strong> {{authorVal}}</li>
@@ -33,9 +40,8 @@
     		<script id="lib" type="text/html">
     		<div class="small-12 columns">
     			<div id="infoModal" class="hide">
-    			</div>
-    		
-			<ul class="small-block-grid-2 medium-block-grid-3">
+    			</div>			
+    		<ul class="tiles">
 				<li>
 					<div class="book">
 							<img class="bookThumb left" src="{{thumb}}" alt="">
@@ -45,8 +51,8 @@
 								<li>{{date}}</li>
 							</ul>
 							<ul class="icons right">
-								<li><a href="#"><i id="accessBook"></i></a></li>
-								<li><a href="#"><i id="info" class="fa fa-info-circle fa-2x"></i></a></li>
+								<li><i id="accessBook"></i></li>
+								<li><i id="info" class="fa fa-info-circle fa-2x"></i></li>
 								<li><a href="#"><i id="garbage"></i></a></li>
 							</ul>
 					</div>
@@ -61,6 +67,7 @@
 					<div class="book">adfsd</div>
 				</li>
 			</ul>
+			<div class="overlay hide"></div>
 		</div>
 	</script>
     	<script src="js/jquery.js"></script>

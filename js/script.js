@@ -1,6 +1,7 @@
 window.onload = function () {
+FastClick.attach(document.body);
 //build library view and data
-var libraryData = JSON.parse('{"bookTitle":"CPHA Book Title", "version":"1.1","otherTitle":"Other Title","isDownloaded":false ,"date":"11/04/2020","thumb":"img/CPhA_Book_Image.png"}');
+var libraryData = JSON.parse('{"bookTitle":"Compendium of Pharmaceuticals and Specialties 2014 (CPS) English", "author":"Editor-in-Chief Carol Repchinsky, BSP","otherTitle":"Other Title","isDownloaded":true ,"date":"11/04/2020","thumb":"img/CPhA_Book_Image.png"}');
 var libraryView = $("#lib").html();
 var libraryOutput = Mustache.render(libraryView, libraryData);
 $(document.body).append(libraryOutput);
@@ -24,6 +25,7 @@ $('#info').on('click', function () {
 			$('.infoList').addClass('hide');
 			$('.stickyLeft').addClass('hide');
 			$('.iframeCont').show('fast');
+
 		$('#close').on('click', function () {
 			$('.infoList').removeClass('hide');
 			$('.stickyLeft').removeClass('hide');
@@ -32,6 +34,7 @@ $('#info').on('click', function () {
 	});
 });
 
+//orientation change handlers
 var mql = window.matchMedia("(orientation: portrait)");
 if(mql.matches) {  
 	$('.tiles').addClass("small-block-grid-2");
@@ -50,28 +53,36 @@ mql.addListener(function(m) {
 		console.log("landscape");
 	}
 });
+
 //check if book is downloaded and update icons
 if (libraryData.isDownloaded) {
 	//show book icon and garbage icon
-	$('#garbage').addClass("fa fa-trash-o fa-2x");
-	$('#accessBook').addClass("fa fa-book fa-2x");
+	$('#garbage').addClass("fa fa-trash-o fa-3x");
+	$('#accessBook').addClass("fa fa-book fa-3x");
 }else{
 	//show download icon
-	$('#accessBook').addClass("fa fa-cloud-download fa-2x");
+	$('#accessBook').addClass("fa fa-cloud-download fa-3x");
 };
 
 //progress bar
 	$('#accessBook').on('click', function () {
-	if ($('#accessBook').hasClass('fa fa-cloud-download fa-2x')) {
-		$('.progress').removeClass('hide');
-		for (var i = 0; i <= 100; i++) {
-				$('meter').attr('width', "i")
-			};
-			$('#accessBook').removeClass("a fa-cloud-download fa-2x");
-			$('#garbage').addClass("fa fa-trash-o fa-2x");
-			$('#accessBook').addClass("fa fa-book fa-2x");
-		};
-});
+	if ($('#accessBook').hasClass('fa fa-cloud-download fa-3x')) {
+			$('progress').removeClass('hide');
+	
+					var i = 0;
+					if (i <= $('progress').attr('max')){
+					setInterval(function() {
+					      i +=5;
+					      $('progress').attr('value',i);		
+					}, 1000);
+				}
 
+			/*$('progress').addClass('hide');*/
+			$('#accessBook').removeClass("a fa-cloud-download fa-3x");
+			$('#garbage').addClass("fa fa-trash-o fa-3x");
+			$('#accessBook').addClass("fa fa-book fa-3x");	
+
+				}		
+		});
 };
 

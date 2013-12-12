@@ -133,18 +133,24 @@ small {
     color: white;
   }
  
-.progress {
-  background-color: #f6f6f6;
+progress{
+background: #fff;
   height: 1.5625rem;
   border: 1px solid #cccccc;
   padding: 0.125rem;
-  margin-bottom: 0.625rem; 
-  }
-  .progress .meter {
-    background: #2ba6cb;
-    height: 100%;
-    display: block; 
-  }
+  margin-bottom: 0.625rem;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #fff;
+}
+
+progress::-webkit-progress-value {
+  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4399CD), color-stop(100%,#a5c956));
+  background: -webkit-linear-gradient(top,  #19A9FF 0%,#4399CD 100%);
+  background: linear-gradient(to bottom,  #19A9FF 0%,#4399CD 100%);
+}
 
 body{
   font-size: 20px;
@@ -190,15 +196,19 @@ ul{
   margin: 0;
   padding: 0;
   margin-bottom: 20px; 
+  background-color: rgba(67, 153, 205, 0.2);
 }
 .largePreview {
+  display: block;
+  margin: 0 auto;
   width: 100%;
   height: auto;
-  left: 50%;
+  max-width: 290px;
 }
 #aboutFrame{
   width: 100%;
   height: 100%;
+  overflow: auto;
 }
 .iframeCont{
   width: 100%;
@@ -206,6 +216,7 @@ ul{
   z-index: 10;
   float: right;
   background-color: white;
+  overflow: auto;
 }
 #close{
   color: red;
@@ -227,18 +238,19 @@ ul{
   background-color: rgba(0,0,0,0.5);
 }
 .book{
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(125,185,232,1)), color-stop(83%,rgba(125,185,232,0.13)), color-stop(95%,rgba(58,116,176,0)), color-stop(100%,rgba(30,87,153,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, rgba(125,185,232,1) 0%,rgba(125,185,232,0.13) 83%,rgba(58,116,176,0) 95%,rgba(30,87,153,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: url(../img/CPhA_Tile_Background.png),  -webkit-linear-gradient(-45deg, rgba(255,255,255,0.25) 5%,rgba(255,255,255,0.25) 6%,rgba(255,255,255,0) 100%);
+  background-color: #707070;
+  background-repeat:no-repeat;
+  background-position: left;
   position: relative;
   width: 100%;
   padding: 5px;
   color: #fff;
-  background-color: #4399CD;
-  font-size: 80%; 
+  font-size: 70%; 
   border-radius: 5px;
   box-shadow:  2px 1px 5px 1px rgba(0,0,0,0.2);
   height: 150px;
-  overflow: hidden;
+  overflow: auto;
 }
 .book h3{
   margin: 0;
@@ -253,12 +265,17 @@ ul{
   padding-left: 30%;
 }
 .bookInfo li{
+  font-size: 1em;
+  width: 90%;
   text-shadow: rgba(0,0,0,0.2) -1px 1px, rgba(0,0,0,0.2) -2px 2px;
+}
+.book li:first-child{
+  font-weight: 600;
 }
 .bookThumb{
   margin: 0;
-  width: 25%;
-  height: auto;
+  width: auto;
+  height: 100px;
   padding-top: 1px;
   box-shadow:  2px 1px 5px 1px rgba(0,0,0,0.2);
 }

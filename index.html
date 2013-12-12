@@ -24,7 +24,6 @@
 	    		    <li><a href="{{credits}}" target="aboutFrame">Credits</a></li>
 	    		</ul>
 	    	</div>
-	    		
 	    		<ul class="infoList">
 	    			<li><strong>{{title}}:</strong> {{titleVal}}</li>
 	    			<li><strong>{{author}}:</strong> {{authorVal}}</li>
@@ -38,12 +37,16 @@
 	    		</ul>
     	</script>
     		<script id="lib" type="text/html">
+    		<div class="overlay hide"></div>
     		<div class="small-12 columns">
     			<div id="infoModal" class="hide">
     			</div>			
     		<ul class="tiles">
 				<li>
 					<div class="book">
+							<div class="progress hide">
+  								<span class="meter" style="width: 20%"></span>
+							</div>
 							<img class="bookThumb left" src="{{thumb}}" alt="">
 							<ul class="bookInfo"><h3>{{bookTitle}}</h3>
 								<li>version: {{version}}</li>
@@ -66,8 +69,7 @@
 				<li>
 					<div class="book">adfsd</div>
 				</li>
-			</ul>
-			<div class="overlay hide"></div>
+			</ul>			
 		</div>
 	</script>
     	<script src="js/jquery.js"></script>

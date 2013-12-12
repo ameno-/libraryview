@@ -1,6 +1,6 @@
 window.onload = function () {
 //build library view and data
-var libraryData = JSON.parse('{"bookTitle":"CPHA Book Title", "version":"1.1","otherTitle":"Other Title","isDownloaded":true ,"date":"11/04/2020","thumb":"img/CPhA_Book_Image.png"}');
+var libraryData = JSON.parse('{"bookTitle":"CPHA Book Title", "version":"1.1","otherTitle":"Other Title","isDownloaded":false ,"date":"11/04/2020","thumb":"img/CPhA_Book_Image.png"}');
 var libraryView = $("#lib").html();
 var libraryOutput = Mustache.render(libraryView, libraryData);
 $(document.body).append(libraryOutput);
@@ -22,9 +22,11 @@ $('#info').on('click', function () {
 
 	$('.aboutLinks').children().on('click', function (ev) {
 			$('.infoList').addClass('hide');
+			$('.stickyLeft').addClass('hide');
 			$('.iframeCont').show('fast');
 		$('#close').on('click', function () {
 			$('.infoList').removeClass('hide');
+			$('.stickyLeft').removeClass('hide');
 			$('.iframeCont').hide('fast');
 		});
 	});
@@ -39,19 +41,37 @@ if(mql.matches) {
 mql.addListener(function(m) {
 	if(m.matches) {
 		$('.tiles').removeClass("small-block-grid-3");
-		$('.tiles').addClass("small-block-grid-2")
+		$('.tiles').addClass("small-block-grid-2");
+		console.log("portrait");
 	}
 	else {
 		$('.tiles').removeClass("small-block-grid-2");
-		$('.tiles').addClass("small-block-grid-3")
+		$('.tiles').addClass("small-block-grid-3");
+		console.log("landscape");
 	}
 });
 //check if book is downloaded and update icons
 if (libraryData.isDownloaded) {
+	//show book icon and garbage icon
 	$('#garbage').addClass("fa fa-trash-o fa-2x");
 	$('#accessBook').addClass("fa fa-book fa-2x");
 }else{
+	//show download icon
 	$('#accessBook').addClass("fa fa-cloud-download fa-2x");
 };
+
+//progress bar
+	$('#accessBook').on('click', function () {
+	if ($('#accessBook').hasClass('fa fa-cloud-download fa-2x')) {
+		$('.progress').removeClass('hide');
+		for (var i = 0; i <= 100; i++) {
+				$('meter').attr('width', "i")
+			};
+			$('#accessBook').removeClass("a fa-cloud-download fa-2x");
+			$('#garbage').addClass("fa fa-trash-o fa-2x");
+			$('#accessBook').addClass("fa fa-book fa-2x");
+		};
+});
+
 };
 

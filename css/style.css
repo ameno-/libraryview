@@ -134,7 +134,10 @@ small {
   }
  
 progress{
-background: #fff;
+  position: absolute;
+  width: 99%;
+  top: 0;
+  background: #fff;
   height: 1.5625rem;
   border: 1px solid #cccccc;
   padding: 0.125rem;
@@ -151,7 +154,13 @@ progress::-webkit-progress-value {
   background: -webkit-linear-gradient(top,  #19A9FF 0%,#4399CD 100%);
   background: linear-gradient(to bottom,  #19A9FF 0%,#4399CD 100%);
 }
-
+.grayed{
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.1);
+}
 body{
   font-size: 20px;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -169,39 +178,46 @@ ul{
   width: 60%;
   padding: 10px;
   height: 150%;
-  overflow: auto;
   background-color: #fff;
   z-index: 2;
+  overflow: hidden;
 }
-.infoList{
-  background-color: #fff;
+.infoListContainer{
   padding: 5px;
   line-height: 4;
   float: right;
   clear: right;
-  width: 55%;
+  width: 60%;
+  height: 88%;
+  overflow: auto;
 }
-.infoList li{
+.infoList{
+  background-color: #fff;
+}
+
+.infoListContainer li{
   line-height: 1.2;
+  list-style: none;
 }
 .stickyLeft{
   position: fixed;
   width: 25%;
-  height: 80%;
-  overflow: auto;
+  height: 67%;
+  overflow: hidden;
 }
 .infoHeader{
   text-align: center;
+  width: 100%;
   z-index: 3;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   margin-bottom: 20px; 
-  background-color: rgba(67, 153, 205, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .largePreview {
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 180px;
   height: auto;
   max-width: 290px;
 }
@@ -216,19 +232,20 @@ ul{
   z-index: 10;
   float: right;
   background-color: white;
-  overflow: auto;
 }
 #close{
   color: red;
 }
 .aboutLinks{
-  bottom: 0;
-  text-align: right;
-  right: 0;
+  text-align: center;
+  margin-left: 0 auto;
 }
 .aboutLinks li a{
   font-size: 1.2em;
   color: black;
+}
+.secTitle{
+  font-family: "Open Sans bold", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 .overlay{
   position: fixed;
@@ -238,19 +255,19 @@ ul{
   background-color: rgba(0,0,0,0.5);
 }
 .book{
-  background: url(../img/CPhA_Tile_Background.png),  -webkit-linear-gradient(-45deg, rgba(255,255,255,0.25) 5%,rgba(255,255,255,0.25) 6%,rgba(255,255,255,0) 100%);
+  background: grey;
   background-color: #707070;
   background-repeat:no-repeat;
   background-position: left;
   position: relative;
   width: 100%;
-  padding: 5px;
+  padding: 1px;
   color: #fff;
   font-size: 70%; 
-  border-radius: 5px;
-  box-shadow:  2px 1px 5px 1px rgba(0,0,0,0.2);
-  height: 150px;
-  overflow: auto;
+  border-radius: 2px;
+  box-shadow:  2px 1px 5px 1px rgba(0,0,0,0.1);
+  height: 140px;
+  overflow: hidden;
 }
 .book h3{
   margin: 0;
@@ -262,20 +279,20 @@ ul{
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-left: 30%;
 }
 .bookInfo li{
+  padding-left: 7.5rem;
   font-size: 1em;
-  width: 90%;
+  width: 100%;
   text-shadow: rgba(0,0,0,0.2) -1px 1px, rgba(0,0,0,0.2) -2px 2px;
 }
 .book li:first-child{
-  font-weight: 600;
+  font-weight: 500;
 }
 .bookThumb{
   margin: 0;
-  width: auto;
-  height: 100px;
+  width: 110px;
+  height: 145px;
   padding-top: 1px;
   box-shadow:  2px 1px 5px 1px rgba(0,0,0,0.2);
 }

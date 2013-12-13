@@ -11,12 +11,12 @@
     </head>
     <body>
     <script id="moreInfo" type="text/html">
+    <h1 class="infoHeader text-center">{{heading}}</h1>
     	<div class="iframeCont hide">
-    		<i class="fa fa-minus-circle fa-2x" id="close"></i>
+    		<i class="fa fa fa-times-circle fa-3x" id="close"></i>
     		<iframe id="aboutFrame" scrolling="yes" src="" frameborder="0"></iframe>
     	</div>
     		<div class="stickyLeft">
-    			<h1 class="infoHeader text-center">{{heading}}</h1>
 	    		<img class="largePreview" src="{{thumb}}" alt="">
 	    		<ul class="aboutLinks">
 	    		    <li><a href="{{aboutBook}}" target="aboutFrame">About the book</a></li>
@@ -24,17 +24,19 @@
 	    		    <li><a href="{{credits}}" target="aboutFrame">Credits</a></li>
 	    		</ul>
 	    	</div>
+	    	<div class="infoListContainer"
 	    		<ul class="infoList">
-	    			<li><strong>{{title}}:</strong> {{titleVal}}</li>
-	    			<li><strong>{{author}}:</strong> {{authorVal}}</li>
-	    			<li><strong>Date:</strong> {{date}}</li>
-	    			<li><strong>ISBN:</strong> {{isbn}}</li>
-	    			<li><strong>{{orgPub}}:</strong> {{orgPubVal}}</li>
-	    			<li><strong>{{subj}}:</strong> {{subjVal}}</li>
-	    			<li><strong>{{publisher}}:</strong> {{publisherVal}}</li>
-	    			<li><strong>{{language}}:</strong> {{languageVal}}</li>
-	    			<li><strong>{{desc}}:</strong> {{descVal}}</li>
+	    			<li><span class="secTitle">{{title}}:</span> <span class="val">{{titleVal}}</span></li>
+	    			<li><span class="secTitle">{{author}}:</span> <span class="val">{{authorVal}}</span></li>
+	    			<li><span class="secTitle">Date:</span> <span class="val">{{date}}</span></li>
+	    			<li><span class="secTitle">ISBN:</span> <span class="val">{{isbn}}</span></li>
+	    			<li><span class="secTitle">{{orgPub}}:</span> <span class="val">{{orgPubVal}}</span></li>
+	    			<li><span class="secTitle">{{subj}}:</span> <span class="val">{{subjVal}}</span></li>
+	    			<li><span class="secTitle">{{publisher}}:</span> <span class="val">{{publisherVal}}</span></li>
+	    			<li><span class="secTitle">{{language}}:</span> <span class="val">{{languageVal}}</span></li>
+	    			<li><span class="secTitle">{{desc}}:</span> <span class="val">{{descVal}}</span></li>
 	    		</ul>
+	    	</div>
     	</script>
     		<script id="lib" type="text/html">
     		<div class="overlay hide"></div>
@@ -45,6 +47,7 @@
 				<li>
 					<div class="book">
 							<progress class="hide" value="0" max="100"></progress>
+							<div class="grayed hide"></div>
 							<img class="bookThumb left" src="{{thumb}}" alt="">
 							<ul class="bookInfo">
 								<li>{{bookTitle}}</li>

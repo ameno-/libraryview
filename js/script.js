@@ -27,13 +27,12 @@ $('#info').on('click', function () {
 	removeEmpty();
 	//controlll show/hide of elements for the mroe info iframes
 	$('.aboutLinks').children().on('click', function (ev) {
-			$('.infoList').addClass('hide');
-			$('.stickyLeft').addClass('hide');
+			$('.infoList,.stickyLeft').addClass('hide');
 			$('.iframeCont').show('fast');
 		});
 			$('#close').on('click', function () {
-			$('.infoList').removeClass('hide');
-			$('.stickyLeft').removeClass('hide');
+			$('.infoList,.stickyLeft').removeClass('hide');
+			$('#aboutFrame').attr('src',' ');
 			$('.iframeCont').hide('fast');		
 		});
 });

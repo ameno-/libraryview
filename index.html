@@ -12,7 +12,7 @@
     <body>
     <script id="moreInfo" type="text/html">
     <h1 class="infoHeader text-center">{{heading}}</h1>
-    	<div class="iframeCont hide">
+    	<div style="overflow:auto;-webkit-overflow-scrolling:touch" class="iframeCont hide">
     		<i class="fa fa fa-times-circle fa-3x" id="close"></i>
     		<iframe id="aboutFrame" scrolling="yes" src="" frameborder="0"></iframe>
     	</div>
@@ -55,7 +55,7 @@
 							<ul class="icons right">
 								<li><i id="accessBook"></i></li>
 								<li><i id="info" class="fa fa-info-circle fa-3x"></i></li>
-								<li><a href="#"><i id="garbage"></i></a></li>
+								<li><i id="garbage"></i></li>
 							</ul>
 					</div>
 				</li>

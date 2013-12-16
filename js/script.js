@@ -35,7 +35,7 @@ $('#info').on('click', function () {
 			$('#aboutFrame').attr('src',' ');
 			$('.iframeCont').hide('fast');		
 		});
-});
+	});
 		$('.overlay').on('click', function(){
 			$('#infoModal').addClass('hide').children().remove();
 			$('.overlay').addClass('hide');
@@ -75,24 +75,16 @@ if (libraryData.isDownloaded) {
 	$('#accessBook').on('click', function () {
 		//only excecute download if the icon class = donwloaded --> (data.isDownloaded = false)
 	if ($('#accessBook').hasClass(downloadIcon)) {
-			$('progress').removeClass('hide');
-			$('.grayed').removeClass('hide');
-					var i = 0;
-					if (i <= $('progress').attr('max')){
-					setInterval(function() {
-					      i +=5;
-					      $('progress').attr('value',i);		
-					}, 1000);
+				progress();
+				
 				}
 
-			
-				}
-			//hide 
-			$('progress').addClass('hide');
-			$('.grayed').addClass('hide');
+			//hide
 			$('#accessBook').removeClass(downloadIcon);
 			$('#garbage').addClass(trashIcon);
-			$('#accessBook').addClass(bookIcon);		
+			$('#accessBook').addClass(bookIcon);
+			$('progress').addClass('hide');
+			$('.grayed').addClass('hide');
 		});
 };
 
@@ -104,3 +96,15 @@ if (libraryData.isDownloaded) {
 	    	}
 		});
 	};
+
+	function progress () {
+				$('progress').removeClass('hide');
+				$('.grayed').removeClass('hide');
+					var i = 0;
+					if (i <= $('progress').attr('max')){
+					setInterval(function() {
+					      i +=5;
+					      $('progress').attr('value',i);		
+					}, 1000);
+				}
+			}

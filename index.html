@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Library View</title>
         <link rel="stylesheet" href="css/layout.min.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/icons.css">
         <link rel="stylesheet" href="css/style.css">      
     </head>
     <body>
     <script id="moreInfo" type="text/html">
-    <h1 class="infoHeader text-center">{{heading}}</h1>
+    <h1 class="infoHeader text-center"><i class="icon-exit1" id="closeModal"></i>{{heading}}</h1>
     	<div style="overflow:auto;-webkit-overflow-scrolling:touch" class="iframeCont hide">
-    		<i class="fa fa fa-times-circle fa-3x" id="close"></i>
+    		<i class="icon-exit1" id="close"></i>
     		<iframe id="aboutFrame" scrolling="yes" src="" frameborder="0"></iframe>
     	</div>
     		<div class="stickyLeft">
@@ -54,7 +54,7 @@
 							</ul>
 							<ul class="icons right">
 								<li><i id="accessBook"></i></li>
-								<li><i id="info" class="fa fa-info-circle fa-3x"></i></li>
+								<li><i id="info" class="icon-info"></i></li>
 								<li><i id="garbage"></i></li>
 							</ul>
 					</div>

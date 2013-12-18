@@ -1,15 +1,17 @@
 window.onload = function () {
 FastClick.attach(document.body);
-
-var downloadIcon = "fa fa-cloud-download fa-3x",
-			trashIcon = "fa fa-trash-o fa-3x",
-			bookIcon = "fa fa-book fa-3x"
+$('#accessBook').css('font-size','2.2em');
+var downloadIcon = "icon-download2",
+			trashIcon = "icon-trash2",
+			bookIcon = "icon-book"
 //build library view and data
-var libraryData = JSON.parse('{"bookTitle":"Compendium of Pharmaceuticals and Specialties 2014 (CPS) English", "author":"Editor-in-Chief Carol Repchinsky, BSP","otherTitle":"Other Title","isDownloaded":false ,"date":"11/04/2020","thumb":"img/CPhA_Book_Image.png"}');
+var libraryData = JSON.parse('{"bookTitle":"Compendium of Pharmaceuticals and Specialties 2014 (CPS) English", "imgurl":"../img/Tile_Background.png","author":"Editor-in-Chief Carol Repchinsky, BSP","otherTitle":"Other Title","isDownloaded":false ,"date":"11/04/2020","thumb":"img/CPhA_Book_Image.png"}');
 var libraryView = $("#lib").html();
 var libraryOutput = Mustache.render(libraryView, libraryData);
 $(document.body).append(libraryOutput);
-
+var backgroundImage = libraryData.imgurl;
+$('.addImg').css('background-image', 'url(../img/Tile_Background.png)');
+$('.book').addClass('addImg');
 var infoView = $('#moreInfo').html(),
 	infoData;
 
@@ -36,6 +38,10 @@ $('#info').on('click', function () {
 			$('.iframeCont').hide('fast');		
 		});
 	});
+$('#closeModal').on('click', function(){
+			$('#infoModal').addClass('hide').children().remove();
+			$('.overlay').addClass('hide');
+		});
 		$('.overlay').on('click', function(){
 			$('#infoModal').addClass('hide').children().remove();
 			$('.overlay').addClass('hide');

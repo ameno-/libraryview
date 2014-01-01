@@ -25,15 +25,16 @@ $('.info').on('click', function () {
 	$('.overlay').removeClass('hide');
 	$('#infoModal').append(infoOutput);
 	$('#infoModal').removeClass('hide');
-	//dynamically remove list items with empty values
+
+	//remove list items with empty values passed in from 
 	removeEmpty();
 
-	//click handler for the modal window
-	$('#closeModal').on('click', function(){
+	//close modal window via click/touch outside of window or by clicking close icon
+	$('#closeModal,.overlay').on('click', function(){
 			$('#infoModal').addClass('hide').children().remove();
 			$('.overlay').addClass('hide');
 		});
-	//controlll show/hide of elements for the mroe info iframes
+	//Iframe show/hide
 	$('.aboutLinks').children().on('click', function (ev) {
 			$('.infoList,.stickyLeft').addClass('hide');
 			$('.iframeCont').show('fast');
@@ -44,13 +45,8 @@ $('.info').on('click', function () {
 			$('.iframeCont').hide('fast');		
 		});
 	});
-		//handler for closing modal window via click outside of window
-		$('.overlay').on('click', function(){
-			$('#infoModal').addClass('hide').children().remove();
-			$('.overlay').addClass('hide');
-		});
 
-//orientation change handlers
+//orientation change handler
 var mql = window.matchMedia("(orientation: portrait)");
 if(mql.matches) {  
 	$('.tiles').addClass("small-block-grid-2");
@@ -87,12 +83,10 @@ if (libraryData.isDownloaded) {
 				var i = 0;
 
 					do {
-						i +=5;
-						$('progress').attr('value',i);
-						  setInterval(function() {					      
-					      	
-						}, 1000);
+						i +=5;											 
+						$('progress').attr('value',i);						 						  
 					} while (i < $('progress').attr('max'));
+
 					//hide
 					$('.accessBook').removeClass(downloadIcon);
 					$('.garbage').addClass(trashIcon);

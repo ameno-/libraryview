@@ -174,10 +174,10 @@ ul{
 #infoModal{
   position: absolute;
   top: 15%;
-  left: 15%;
-  width: 70%;
+  left: 8%;
+  width: 85%;
   padding: 10px;
-  height: 195%;
+  height: 390%;
   background-color: #fff;
   z-index: 2;
   overflow: hidden;
@@ -187,7 +187,7 @@ ul{
   line-height: 4;
   float: right;
   clear: right;
-  width: 65%;
+  width: 71%;
   height: 88%;
   overflow: auto;
 }
@@ -217,7 +217,7 @@ ul{
 .largePreview {
   display: block;
   margin: 0 auto;
-  width: 180px;
+  width: 140px;
   height: auto;
   max-width: 290px;
 }
@@ -238,13 +238,14 @@ ul{
   font-size: 1em;
 }
 #close{
+  font-size: 1.5em;
   color: #DA0000;
 }
 
 .aboutLinks{
   display: block;
   margin: 0 auto;
-  width: 180px;
+  width: 140px;
 }
 .aboutLinks li a{
   font-size: 1.2em;

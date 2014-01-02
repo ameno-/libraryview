@@ -47,7 +47,7 @@ $('.info').on('click', function () {
 		});
 	});
 
-//orientation change handler
+//adjust layout based on orientation
 var mql = window.matchMedia("(orientation: portrait)");
 if(mql.matches) {  
 	$('.tiles').addClass("small-block-grid-2");
@@ -80,14 +80,12 @@ if (libraryData.isDownloaded) {
 		if ($('.accessBook').hasClass(downloadIcon)) {
 
 				$('progress').removeClass('hide');
-				$('.grayed').removeClass('hide');
+				$('.grayed').removeClass('hide');	
 				var i = 0;
-
 					do {
-						i +=5;											 
-						$('progress').attr('value',i);						 						  
+						setTimeout($('progress').attr('value',i),300);
+						i +=5;											 										 						  
 					} while (i < $('progress').attr('max'));
-
 					//hide
 					$('.accessBook').removeClass(downloadIcon);
 					$('.garbage').addClass(trashIcon);

@@ -21,6 +21,15 @@
 	-webkit-font-smoothing: antialiased;
 }
 
+.icon-leave:before {
+	content: "\e37a";
+}
+.icon-return:before {
+	content: "\e14b";
+}
+.icon-backspace:before {
+	content: "\e41f";
+}
 .icon-exit5:before {
 	content: "\e600";
 }

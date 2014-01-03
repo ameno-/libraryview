@@ -19,13 +19,14 @@
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
+	
 }
 
 .icon-leave:before {
 	content: "\e37a";
 }
 .icon-return:before {
-	content: "\e14b";
+	content: "\e36e";
 }
 .icon-backspace:before {
 	content: "\e41f";

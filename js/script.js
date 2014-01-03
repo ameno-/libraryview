@@ -37,33 +37,39 @@ $('.info').on('click', function () {
 		});
 	//Iframe show/hide
 	$('.aboutLinks').children().on('click', function (ev) {
-			$('.infoList,.stickyLeft').addClass('hide');
-			$('.iframeCont').show('fast');
+			$('#close').removeClass('hide');
+			/*$('.infoList,.stickyLeft')*/$('.bookModalContainer').addClass('hide');
+			$('.iframeCont').slideDown(500);
 		});
 			$('#close').on('click', function () {
-			$('.infoList,.stickyLeft').removeClass('hide');
+			$('#close').addClass('hide');
+			/*$('.infoList,.stickyLeft')*/$('.bookModalContainer').removeClass('hide');
 			$('#aboutFrame').attr('src',' ');
-			$('.iframeCont').hide('fast');		
+			$('.iframeCont').slideUp(500);		
 		});
 	});
-
 //adjust layout based on orientation
 var mql = window.matchMedia("(orientation: portrait)");
+//detect orientation and set view once page is loaded
 if(mql.matches) {  
 	$('.tiles').addClass("small-block-grid-2");
+	$('#infoModal').css('height','900px');
 } else {  
 	$('.tiles').addClass("small-block-grid-3");
+	$('#infoModal').css('height','700px');
 }
+//listen for orientation changes and adjust view accordingly
 mql.addListener(function(m) {
 	if(m.matches) {
 		$('.tiles').removeClass("small-block-grid-3");
 		$('.tiles').addClass("small-block-grid-2");
+		$('#infoModal').css('height','800px');
 	}else{
 		$('.tiles').removeClass("small-block-grid-2");
 		$('.tiles').addClass("small-block-grid-3");
+		$('#infoModal').css('height','600px');
 	}
 });
-
 //check if book is downloaded and update icons
 if (libraryData.isDownloaded) {
 	//show book icon and garbage icon
@@ -83,7 +89,7 @@ if (libraryData.isDownloaded) {
 				$('.grayed').removeClass('hide');	
 				var i = 0;
 					do {
-						setTimeout($('progress').attr('value',i),300);
+						setTimeout($('progress').attr('value',i),30000);
 						i +=5;											 										 						  
 					} while (i < $('progress').attr('max'));
 					//hide
@@ -92,7 +98,6 @@ if (libraryData.isDownloaded) {
 					$('.accessBook').addClass(bookIcon);
 					$('progress').addClass('hide');
 					$('.grayed').addClass('hide');
-					
 				};
 
 			

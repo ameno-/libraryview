@@ -30,7 +30,7 @@ $('.info').on('click', function () {
 	//remove list items with empty values passed in from 
 	removeEmpty();
 
-	//close modal window via click/touch outside of window or by clicking close icon
+	//close modal window via touch outside of window or by pressing close icon
 	$('#closeModal,.overlay').on('click', function(){
 			$('#infoModal').addClass('hide').children().remove();
 			$('.overlay').addClass('hide');
@@ -38,8 +38,9 @@ $('.info').on('click', function () {
 	//Iframe show/hide
 	$('.aboutLinks').children().on('click', function (ev) {
 			$('#close').removeClass('hide');
-			/*$('.infoList,.stickyLeft')*/$('.bookModalContainer').addClass('hide');
+			/*$('.infoList,.stickyLeft')*/
 			$('.iframeCont').slideDown(500);
+			$('.bookModalContainer').addClass('hide');
 		});
 			$('#close').on('click', function () {
 			$('#close').addClass('hide');

@@ -23,17 +23,17 @@ $('.info').on('click', function () {
 	var	infoOutput = Mustache.render(infoView, infoData);
 		
 	//show grey background, append rendred more info view to modal window, show modal window
-	$('.overlay').removeClass('hide');
+	$('.overlay').fadeIn(300);
 	$('#infoModal').append(infoOutput);
-	$('#infoModal').removeClass('hide');
+	$('#infoModal').fadeIn(400);
 
 	//remove list items with empty values passed in from 
 	removeEmpty();
 
 	//close modal window via touch outside of window or by pressing close icon
 	$('#closeModal,.overlay').on('click', function(){
-			$('#infoModal').addClass('hide').children().remove();
-			$('.overlay').addClass('hide');
+			$('#infoModal').fadeOut(300).children().remove();
+			$('.overlay').fadeOut(200);
 		});
 	//Iframe show/hide
 	$('.aboutLinks').children().on('click', function (ev) {
